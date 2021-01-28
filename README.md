@@ -14,3 +14,7 @@ Step 5: Profit!
 
 
 /GHFear and Genesis @ IllusorySoftware
+
+//
+Special Thanks to emoose for DQXIHook and dga711 for ezpz, which made this possible.
+//
