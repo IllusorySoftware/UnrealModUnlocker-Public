@@ -1,5 +1,6 @@
 #pragma once
 #include "util.h"
+#include "Pattern.h"
 
 
 namespace SigScans
@@ -308,6 +309,22 @@ namespace SigScans
 
 		}
 
+		//Next Version Scan
+		if (pakFileFindAddr == -1)
+		{
+
+			//variables 4.21.0 OuterWorlds
+			char pattern[] = "\x48\x89\x5C\x24\x00\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\x17\x4C\x8B\xE2\x49\x8B\xF8\x48\x8D\x91\x00\x00\x00\x00\x4C\x8B\xE9\x49\x8B\xCC\x41\xB8\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x49\x8B\xD4\x48\x8D\x4D\xA7\xE8\x00\x00\x00\x00\x41\x80\xBD\x00\x00\x00\x00\x00\x0F\x84\x00\x00\x00\x00\x8B\x5D\xAF\x33\xF6\x44\x8D\x4B\xFF\x85\xDB\x75\x03\x44\x8B\xCE";
+			const char* mask = "xxxx?xxxxxxxxxxxxxxx?xxx????xxx????xxxxxxxxxxxxxxxx????xxxxxxxx????x????xxxx????xxxxxxxx????xxx?????xx????xxxxxxxxxxxxxxxx";
+
+
+			//Run pattern scan
+			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+
+
+		}
+
 
 
 		//Exit
@@ -549,6 +566,20 @@ namespace SigScans
 
 			//Run pattern scan 4.12
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12_NRA), mask4_12_NRA);
+
+
+		}
+
+		//Check next version
+		if (IsNonPakFileNameAllowedAddr == -1)
+		{
+
+			//variables 4.21 OuterWorlds
+			char pattern[] = "\x48\x89\x5C\x24\x00\x48\x89\x6C\x24\x00\x56\x57\x41\x56\x48\x83\xEC\x30\x48\x8B\xF9\x45\x33\xC0\x48\x8D\x4C\x24\x00\x4C\x8B\xF2\xE8\x00\x00\x00\x00\x48\x8D\x2D\x00\x00\x00\x00\x83\x78\x08\x00\x74\x05\x48\x8B\x10\xEB\x03";
+			const char* mask = "xxxx?xxxx?xxxxxxxxxxxxxxxxxx?xxxx????xxx????xxxxxxxxxxx";
+
+			//Run pattern scan 4.21
+			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
 
 
 		}

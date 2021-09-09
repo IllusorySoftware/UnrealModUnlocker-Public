@@ -166,6 +166,7 @@
     <ClInclude Include="MinHook\hde\table64.h" />
     <ClInclude Include="MinHook\MinHook.h" />
     <ClInclude Include="MinHook\trampoline.h" />
+    <ClInclude Include="Pattern.h" />
     <ClInclude Include="proxy.h" />
     <ClInclude Include="SigScans.h" />
     <ClInclude Include="stdafx.h" />
