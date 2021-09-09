@@ -45,9 +45,6 @@
     <ClInclude Include="proxy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SDK.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
