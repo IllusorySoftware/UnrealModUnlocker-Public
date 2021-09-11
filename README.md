@@ -13,6 +13,9 @@ Step 4: Run Game with mods applied
 Step 5: Profit!
 
 
+Tutorial to help you add support for your game: https://www.youtube.com/watch?v=UGSAdX1WdOM
+
+
 /GHFear and Genesis @ IllusorySoftware
 
 //
