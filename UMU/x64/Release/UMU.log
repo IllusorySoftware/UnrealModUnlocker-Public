@@ -1,0 +1,11 @@
+﻿  dllmain.cpp
+C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\UMU\SigScans.h(354,26): warning C4244: 'return': conversion from 'uintptr_t' to 'int', possible loss of data
+C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\UMU\SigScans.h(628,38): warning C4244: 'return': conversion from 'uintptr_t' to 'int', possible loss of data
+C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\UMU\dllmain.cpp(201,8): warning C4101: 'dwOld': unreferenced local variable
+     Creating library C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\x64\Release\UMU.lib and object C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\x64\Release\UMU.exp
+  Generating code
+  3 of 143 functions ( 2.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  UMU.vcxproj -> C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\x64\Release\UMU.dll

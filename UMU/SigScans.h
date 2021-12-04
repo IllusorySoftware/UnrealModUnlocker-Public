@@ -31,6 +31,7 @@ namespace SigScans
 		//Run pattern scan
 		auto pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_22), mask4_22);
 
+		
 
 
 		//Check next version (SPECIAL CASE)
@@ -194,13 +195,29 @@ namespace SigScans
 		if (pakFileFindAddr == -1)
 		{
 
-			//variables 4.24
+			//variables 4.24.x
 			char pattern4_24[] = "\x48\x89\x5C\x24\x20\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\xB0\x48\x81\xEC\x50\x01\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\x40\x66\x0F\x6F\x05\x00\x00\x00\x00\x4C\x8D\x4D\xF0\x33\xFF\x66\x0F\x7F\x45\xF0\x49\x8B\xD8\x48\x89\x4D\x80\x0F\x57\xC0\x48\x89\x7D\x00\x48\x8B\xF2\x48\x89\x7D\x20\x33\xC0\x48\x89\x7D\x28\x4C\x8D\x44\x24\x48\x48\x89\x7D\x30\x48\x8B\xD3\x66\x89\x7D\x38\x0F\x11\x45\x08\x4C\x8B\xE9\x89\x45\x18\x48\x89\x7C\x24\x48\xE8\x00\x00\x00\x00\x4C\x8D\x77\xFF\x84\xC0\x0F\x84\x00\x00\x00\x00\x48\x89\x7C\x24\x58";
 			const char* mask4_24 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxx????xxxxx";
 
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
+
+
+
+		}
+
+		//Next Version Scan
+		if (pakFileFindAddr == -1)
+		{
+
+			//variables 4.24.3
+			char pattern[] = "\x48\x89\x5C\x24\x00\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\x17\x4C\x8B\xEA\x49\x8B\xF0\x48\x8D\x91\x00\x00\x00\x00\x4C\x8B\xF9\x49\x8B\xCD\x41\xB8\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x49\x8B\xD5\x48\x8D\x4D\xA7\xE8\x00\x00\x00\x00\x41\x80\xBF\x00\x00\x00\x00\x00\x0F\x84\x00\x00\x00\x00\x8B\x5D\xAF\x45\x33\xF6\x8D\x53\xFF\x85\xDB\x75\x03\x41\x8B\xD6";
+			const char* mask = "xxxx?xxxxxxxxxxxxxxx?xxx????xxx????xxxxxxxxxxxxxxxx????xxxxxxxx????x????xxxx????xxxxxxxx????xxx?????xx????xxxxxxxxxxxxxxxx";
+
+
+			//Run pattern scan
+			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
 
 
 
@@ -321,9 +338,8 @@ namespace SigScans
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
 
-
-
 		}
+
 
 
 
@@ -341,6 +357,20 @@ namespace SigScans
 	}
 
 	//-------------------------------------------------------------------------------------------------------- END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -379,11 +409,25 @@ namespace SigScans
 		//Check next version
 		if (IsNonPakFileNameAllowedAddr == -1)
 		{
-			//variables 4.24
+			//variables 4.24.x
 			char pattern4_24[] = "\x48\x89\x5C\x24\x10\x48\x89\x6C\x24\x20\x56\x57\x41\x56\x48\x83\xEC\x30\x48\x8B\xF9\x45\x33\xC0\x48\x8D\x4C\x24\x20\x48\x8B\xF2\xE8\x00\x00\x00\x00\x48\x8D\x2D\x00\x00\x00\x00\x83\x78\x08\x00\x74\x05\x48\x8B\x10\xEB\x03";
 			const char* mask4_24 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxx????xxxxxxxxxxx";
 
-			//Run pattern scan 4.24
+			//Run pattern scan 4.24.x
+			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
+
+
+
+		}
+
+		//Check next version
+		if (IsNonPakFileNameAllowedAddr == -1)
+		{
+			//variables 4.24.3
+			char pattern4_24[] = "\x48\x89\x5C\x24\x00\x48\x89\x6C\x24\x00\x56\x57\x41\x56\x48\x83\xEC\x30\x48\x8B\xF9\x45\x33\xC0\x48\x8D\x4C\x24\x00\x48\x8B\xF2\xE8\x00\x00\x00\x00\x48\x8D\x2D\x00\x00\x00\x00\x83\x78\x08\x00\x74\x05\x48\x8B\x10\xEB\x03";
+			const char* mask4_24 = "xxxx?xxxx?xxxxxxxxxxxxxxxxxx?xxxx????xxx????xxxxxxxxxxx";
+
+			//Run pattern scan 4.24.3
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
 
 
@@ -581,8 +625,12 @@ namespace SigScans
 			//Run pattern scan 4.21
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
 
+		
 
 		}
+
+
+		
 
 
 		//Exit
@@ -596,9 +644,6 @@ namespace SigScans
 
 	} 
 	//-------------------------------------------------------------------------------------------------------- END
-
-
-
 
 
 
