@@ -1,7 +1,7 @@
-# UnrealModUnlocker-Public 1.0.2
+# UnrealModUnlocker-Public 0.26.3
 Unlocks loading of Third Party Unreal Engine 4 loose files for 75-90% of UE4 games.
 
-## 1.0.2 Changes:
+## 0.26.3 Changes:
 
 Added support for more version of UE4. (a version of 4.24.3)
 
