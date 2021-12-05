@@ -23,7 +23,7 @@ Step 5: Profit!
 
 
 ## How to add support for YOUR game:
-Tutorial to help you add support for your game: Coming Soon!
+Tutorial to help you add support for your game: https://www.youtube.com/watch?v=Uf3cArpU6Xk
 
 
 
