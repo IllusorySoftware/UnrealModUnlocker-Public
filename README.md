@@ -1,5 +1,7 @@
 # UnrealModUnlocker-Public 0.26.5
 Unlocks loading of Third Party Unreal Engine 4 loose files for 75-90% of UE4 games.
+This software is for unlocking loading of loose file packages (.uasset | .ubulk | .uexp | .umap and any other file you could normally find inside the PAK archives).
+Just recreate the correct path of a file inside the PAK file of the game you are trying to modidy and the game will prefer your loose file over the one inside the PAK.
 
 ## 0.26.5 Changes:
 
