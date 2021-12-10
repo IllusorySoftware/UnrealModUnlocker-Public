@@ -341,6 +341,25 @@ namespace SigScans
 		}
 
 
+		//Next Version Scan
+		if (pakFileFindAddr == -1)
+		{
+
+			//variables 4.27.1
+			char pattern[] = "\x48\x89\x5C\x24\x00\x48\x89\x6C\x24\x00\x48\x89\x74\x24\x00\x57\x41\x56\x41\x57\x48\x83\xEC\x30\x80\xB9\x00\x00\x00\x00\x00\x4D\x8B\xF8\x48\x8B\xFA\x48\x8B\xD9\x0F\x84\x00\x00\x00\x00\x8B\xA9\x00\x00\x00\x00\x48\x8D\x91\x00\x00\x00\x00\x4C\x8B\xB1\x00\x00\x00\x00\x41\xB8\x00\x00\x00\x00\x48\x8B\xCF\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x83\x7F\x08\x00\x74\x05\x48\x8B\x17\xEB\x07";
+			const char* mask = "xxxx?xxxx?xxxx?xxxxxxxxxxx?????xxxxxxxxxxx????xx????xxx????xxx????xx????xxxx????xxxx????xxxxxxxxxxx";
+
+
+			//Run pattern scan
+			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+		}
+
+
+
+		
+
+
 
 
 		//Exit
@@ -629,8 +648,20 @@ namespace SigScans
 
 		}
 
+		//Check next version
+		if (IsNonPakFileNameAllowedAddr == -1)
+		{
 
-		
+			//variables 4.27.1
+			char pattern[] = "\x48\x89\x5C\x24\x00\x48\x89\x6C\x24\x00\x56\x57\x41\x56\x48\x83\xEC\x30\x48\x8B\xF1\x45\x33\xC0\x48\x8D\x4C\x24\x00\x4C\x8B\xF2\xE8\x00\x00\x00\x00\x48\x8D\x2D\x00\x00\x00\x00\x83\x78\x08\x00\x74\x05\x48\x8B\x10\xEB\x03";
+			const char* mask = "xxxx?xxxx?xxxxxxxxxxxxxxxxxx?xxxx????xxx????xxxxxxxxxxx";
+
+			//Run pattern scan 4.27.1
+			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+
+
+		}
 
 
 		//Exit
