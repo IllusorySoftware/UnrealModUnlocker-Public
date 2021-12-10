@@ -85,10 +85,9 @@ Unreal Engine 4.9
 
 ```
 
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+Engine  | Version |  Compatibility
+------------- | ------------- | -------------
+Unreal Engine | 4.0  | Supported
 
 ## How to add support for YOUR game:
 Tutorial to help you add support for your game: https://www.youtube.com/watch?v=Uf3cArpU6Xk
