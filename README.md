@@ -22,7 +22,7 @@ Step 5: Profit!
 ## Compatibility:
 
 ```diff
-SUPPORTED:
++ SUPPORTED:
 
 4.11
 
@@ -59,7 +59,7 @@ SUPPORTED:
 2.27
 
 
-NOT SUPPORTED:
+- NOT SUPPORTED:
 
 4.0
 
