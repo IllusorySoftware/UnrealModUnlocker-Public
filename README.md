@@ -24,6 +24,8 @@ Step 5: Profit!
 ```diff
 + SUPPORTED:
 
+Unreal Engine 4.10
+
 Unreal Engine 4.11
 
 Unreal Engine 4.12
@@ -81,7 +83,6 @@ Unreal Engine 4.8
 
 Unreal Engine 4.9
 
-Unreal Engine 4.10
 ```
 
 
