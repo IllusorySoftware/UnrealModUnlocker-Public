@@ -19,7 +19,7 @@ Added support for 4.11 & 4.10
 
 **Step 2:** Rename output DLL to dxgi.dll
 
-**Step 3:** Put dxgi.dll in "/Game/Binaries/Win64/"
+**Step 3:** Put dxgi.dll in "/Game/ProjectName/Binaries/Win64/"
 
 **Step 4:** Run Game with mods applied
 
