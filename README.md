@@ -19,6 +19,63 @@ Step 5: Profit!
 
 
 
+## Compatibility:
+
+4.0 : NO
+
+4.1 : NO
+
+4.2 : NO
+
+4.3 : NO
+
+4.4 : NO
+
+4.5 : NO
+
+4.6 : NO
+
+4.7 : NO
+
+4.8 : NO
+
+4.9 : NO
+
+4.10 : NO
+
+4.11 : YES
+
+4.12 : YES
+
+4.13 : YES
+
+4.14 : YES
+
+4.15 : YES
+
+4.16 : YES
+
+4.17 : YES
+
+4.18 : YES
+
+4.19 : YES
+
+4.20 : YES
+
+4.21 : YES
+
+4.22 : YES
+
+4.23 : YES
+
+4.24 : YES
+
+4.25 : YES
+
+4.26 : YES
+
+4.27 : YES
 
 
 
