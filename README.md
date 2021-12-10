@@ -3,7 +3,7 @@ Unlocks loading of Third Party Unreal Engine 4 loose files for 75-90% of UE4 gam
 
 ## 0.26.5 Changes:
 
-Added support for 4.11
+Added support for 4.11 & 4.10
 
 
 ## How to use:
