@@ -7,7 +7,7 @@ Added support for 4.11 & 4.10
 
 
 ## How to use:
-Step 1: Build the source for 64-Bit Release
+**Step 1:** Build the source for 64-Bit Release
 
 Step 2: Rename output DLL to dxgi.dll
 
