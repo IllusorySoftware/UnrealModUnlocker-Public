@@ -15,7 +15,7 @@ namespace SigScans
 	//-------------------------------------------------------------------------------------------------------- END
 
 
-
+	bool bNoIsNonPakFileNameAllowed = false;
 
 
 
@@ -26,11 +26,10 @@ namespace SigScans
 		//variables 4.22
 		char pattern4_22[] = "\x48\x89\x5C\x24\x20\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\xD9\x48\x81\xEC\xD0\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\x17\x4C\x8B\xE2\x49\x8B\xF0\x48\x8D\x91\xE8\x00\x00\x00\x4C\x8B\xE9\x49\x8B\xCC\x41\xB8\x01\x00\x00\x00\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x49\x8B\xD4\x48\x8D\x4D\xA7\xE8\x00\x00\x00\x00\x41\x80\xBD\xA2\x01\x00\x00\x00\x0F\x84\x00\x00\x00\x00\x8B\x5D\xAF\x45\x33\xF6\x44\x8D\x4B\xFF\x85\xDB\x75\x03\x45\x8B\xCE";
 		const char* mask4_22 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxx????xxxxxxxx????xxxxxxxxxx????xxxxxxxxxxxxxxxxx";
-
+		
 
 		//Run pattern scan
 		auto pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_22), mask4_22);
-
 		
 
 
@@ -66,9 +65,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_21), mask4_21);
-
-
-
 		}
 
 
@@ -83,9 +79,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_18), mask4_18);
-
-
-
 		}
 
 
@@ -100,9 +93,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_20), mask4_20);
-
-
-
 		}
 
 
@@ -117,9 +107,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_19), mask4_19);
-
-
-
 		}
 
 
@@ -134,9 +121,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_17), mask4_17);
-
-
-
 		}
 
 
@@ -151,9 +135,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_16), mask4_16);
-
-
-
 		}
 
 
@@ -168,9 +149,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_15), mask4_15);
-
-
-
 		}
 
 
@@ -185,9 +163,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_14), mask4_14);
-
-
-
 		}
 
 
@@ -202,9 +177,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
-
-
-
 		}
 
 		//Next Version Scan
@@ -218,9 +190,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
-
-
-
 		}
 
 
@@ -235,9 +204,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_25_3), mask4_25_3);
-
-
-
 		}
 
 
@@ -252,9 +218,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_25_2), mask4_25_2);
-
-
-
 		}
 
 
@@ -269,9 +232,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_26), mask4_26);
-
-
-
 		}
 
 
@@ -286,9 +246,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_13), mask4_13);
-
-
-
 		}
 
 
@@ -299,13 +256,10 @@ namespace SigScans
 			//variables 4.12
 			char pattern4_12[] = "\x48\x89\x5C\x24\x00\x48\x89\x6C\x24\x00\x56\x57\x41\x57\x48\x83\xEC\x40\x48\x8B\xFA\x48\x8D\xB1\x00\x00\x00\x00\x45\x33\xFF\x48\x8B\xE9\x48\x8B\xD6\x48\x8B\xCF\x41\x8B\xDF\x45\x8D\x47\x01\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x48\x8B\xD7";
 			const char* mask4_12 = "xxxx?xxxx?xxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxx????xxxx????xxx";
-
+			
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12), mask4_12);
-
-
-
 		}
 
 
@@ -321,9 +275,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12_NRA), mask4_12_NRA);
-
-
-
 		}
 
 		//Next Version Scan
@@ -337,7 +288,6 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
-
 		}
 
 
@@ -352,22 +302,33 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
-
 		}
 
 
+		//Next Version Scan
+		if (pakFileFindAddr == -1)
+		{
+
+			//variables 4.11
+			char pattern[] = "\x48\x89\x5C\x24\x00\x48\x89\x6C\x24\x00\x56\x57\x41\x57\x48\x83\xEC\x40\x48\x8B\xF2\x48\x8D\xB9\x00\x00\x00\x00\x45\x33\xFF\x48\x8B\xE9\x48\x8B\xD7\x48\x8B\xCE\x41\x8B\xDF\x45\x8D\x47\x01\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x48\x8B\xD6";
+			const char* mask = "xxxx?xxxx?xxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxx????xxxx????xxx";
+
+
+			//Run pattern scan
+			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = true;
+			}
+		}
 
 		
-
-
-
 
 		//Exit
 		if (pakFileFindAddr == -1)
 		{
-
 			return -1;
-
 		}
 
 
@@ -419,9 +380,6 @@ namespace SigScans
 			char pattern4_232[] = "";
 			//Run pattern scan 4.23
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_23), mask4_23);
-
-
-	
 		}
 
 
@@ -434,9 +392,6 @@ namespace SigScans
 
 			//Run pattern scan 4.24.x
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
-
-
-
 		}
 
 		//Check next version
@@ -448,8 +403,6 @@ namespace SigScans
 
 			//Run pattern scan 4.24.3
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
-
-
 
 		}
 
@@ -464,8 +417,6 @@ namespace SigScans
 
 			//Run pattern scan 4.20, 4.21
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_21), mask4_21);
-
-
 		}
 
 
@@ -479,8 +430,6 @@ namespace SigScans
 
 			//Run pattern scan 4.18
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_18), mask4_18);
-
-
 		}
 
 
@@ -494,8 +443,6 @@ namespace SigScans
 
 			//Run pattern scan 4.19
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_19), mask4_19);
-
-
 		}
 
 
@@ -509,8 +456,6 @@ namespace SigScans
 
 			//Run pattern scan 4.17
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_17), mask4_17);
-
-
 		}
 
 
@@ -524,8 +469,6 @@ namespace SigScans
 
 			//Run pattern scan 4.16
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_16), mask4_16);
-
-
 		}
 
 
@@ -539,8 +482,6 @@ namespace SigScans
 
 			//Run pattern scan 4.15
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_15), mask4_15);
-
-
 		}
 
 
@@ -554,8 +495,6 @@ namespace SigScans
 
 			//Run pattern scan 4.14
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_14), mask4_14);
-
-
 		}
 
 
@@ -569,8 +508,6 @@ namespace SigScans
 
 			//Run pattern scan 4.25
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_25), mask4_25);
-
-
 		}
 
 
@@ -584,8 +521,6 @@ namespace SigScans
 
 			//Run pattern scan 4.26
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_26), mask4_26);
-
-
 		}
 
 
@@ -599,8 +534,6 @@ namespace SigScans
 
 			//Run pattern scan 4.13
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_13), mask4_13);
-
-
 		}
 
 
@@ -614,8 +547,6 @@ namespace SigScans
 
 			//Run pattern scan 4.12
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12), mask4_12);
-
-
 		}
 
 
@@ -629,8 +560,6 @@ namespace SigScans
 
 			//Run pattern scan 4.12
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12_NRA), mask4_12_NRA);
-
-
 		}
 
 		//Check next version
@@ -643,9 +572,6 @@ namespace SigScans
 
 			//Run pattern scan 4.21
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
-
-		
-
 		}
 
 		//Check next version
@@ -658,16 +584,12 @@ namespace SigScans
 
 			//Run pattern scan 4.27.1
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
-
-
-
 		}
 
 
 		//Exit
 		if (IsNonPakFileNameAllowedAddr == -1)
 		{
-
 			return -1;
 		}
 
