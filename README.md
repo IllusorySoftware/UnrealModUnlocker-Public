@@ -21,7 +21,8 @@ Step 5: Profit!
 
 ## Compatibility:
 
-@@ ### 4.0 - NO @@
+```diff
+- ### 4.0 - NO
 
 ### 4.1 - NO
 
@@ -76,7 +77,7 @@ Step 5: Profit!
 ### 4.26 - YES
 
 ### 4.27 - YES
-
+```
 
 
 ## How to add support for YOUR game:
