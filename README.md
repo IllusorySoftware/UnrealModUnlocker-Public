@@ -29,16 +29,16 @@ Added support for 4.9 & 4.8
 
 ## Compatibility:
 
-Engine  | Version | Architechture |  Compatibility
+Engine  | Version | Supported Architechture |  Compatibility
 ------------- | ------------- | ------------- | -------------
-Unreal Engine | 4.0  | x64  | NOT Supported
-Unreal Engine | 4.1  | x64  | NOT Supported
-Unreal Engine | 4.2  | x64  | NOT Supported
-Unreal Engine | 4.3  | x64  | NOT Supported
-Unreal Engine | 4.4  | x64  | NOT Supported
-Unreal Engine | 4.5  | x64  | NOT Supported
-Unreal Engine | 4.6  | x64  | NOT Supported
-Unreal Engine | 4.7  | x64  | NOT Supported
+Unreal Engine | 4.0  | NONE  | NOT Supported
+Unreal Engine | 4.1  | NONE  | NOT Supported
+Unreal Engine | 4.2  | NONE  | NOT Supported
+Unreal Engine | 4.3  | NONE  | NOT Supported
+Unreal Engine | 4.4  | NONE  | NOT Supported
+Unreal Engine | 4.5  | NONE  | NOT Supported
+Unreal Engine | 4.6  | NONE  | NOT Supported
+Unreal Engine | 4.7  | NONE  | NOT Supported
 Unreal Engine | 4.8  | x64  | Supported
 Unreal Engine | 4.9  | x64  | Supported
 Unreal Engine | 4.10  | x64  | Supported
