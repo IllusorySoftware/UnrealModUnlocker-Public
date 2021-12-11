@@ -1,4 +1,4 @@
-# UnrealModUnlocker-Public 0.26.5
+# UnrealModUnlocker-Public 0.26.6
 Unlocks loading of Third Party Unreal Engine 4 loose files for 75-90% of UE4 games.
 This software is for unlocking loading of loose file packages (.uasset | .ubulk | .uexp | .umap and any other file you could normally find inside the PAK archives).
 Any file already in a PAK archive has a virtual path. (You can find filetype and filepath with UMODEL or FMODEL)
@@ -9,9 +9,9 @@ Make sure to have the UnrealModUnlocker installed in the Game/ProjectName/Binari
 Run game!
 Done!
 
-## 0.26.5 Changes:
+## 0.26.6 Changes:
 
-Added support for 4.11 & 4.10
+Added support for 4.9 & 4.8
 
 
 ## How to use:
@@ -39,8 +39,8 @@ Unreal Engine | 4.4  | NOT Supported
 Unreal Engine | 4.5  | NOT Supported
 Unreal Engine | 4.6  | NOT Supported
 Unreal Engine | 4.7  | NOT Supported
-Unreal Engine | 4.8  | NOT Supported
-Unreal Engine | 4.9  | NOT Supported
+Unreal Engine | 4.8  | Supported
+Unreal Engine | 4.9  | Supported
 Unreal Engine | 4.10  | Supported
 Unreal Engine | 4.11  | Supported
 Unreal Engine | 4.12  | Supported
