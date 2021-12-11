@@ -30,7 +30,7 @@ Added support for 4.9 & 4.8
 ## Compatibility:
 
 Engine  | Version | Architechture |  Compatibility
-------------- | ------------- | -------------
+------------- | ------------- | ------------- | -------------
 Unreal Engine | 4.0  | x64  | NOT Supported
 Unreal Engine | 4.1  | x64  | NOT Supported
 Unreal Engine | 4.2  | x64  | NOT Supported
