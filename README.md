@@ -1,4 +1,4 @@
-# UnrealModUnlocker-Public 0.26.6
+# UnrealModUnlocker-Public 0.26.7
 Unlocks loading of Third Party Unreal Engine 4 loose files for 75-90% of UE4 games.
 This software is for unlocking loading of loose file packages (.uasset | .ubulk | .uexp | .umap and any other file you could normally find inside the PAK archives).
 Any file already in a PAK archive has a virtual path. (You can find filetype and filepath with UMODEL or FMODEL)
@@ -9,9 +9,9 @@ Make sure to have the UnrealModUnlocker installed in the Game/ProjectName/Binari
 Run game!
 Done!
 
-## 0.26.6 Changes:
+## 0.26.7 Changes:
 
-Added support for 4.9 & 4.8
+Added a signature for the FindFileInPakFiles() function in a build of 4.20.2 that could be found in Tropico6-Win64-Shipping.exe
 
 
 ## How to use:
