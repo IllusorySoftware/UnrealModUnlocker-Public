@@ -16,6 +16,8 @@ namespace SigScans
 
 
 	bool bNoIsNonPakFileNameAllowed = false;
+	uintptr_t pakFileFindAddr = -1;
+	uintptr_t IsNonPakFileNameAllowedAddr = -1;
 
 
 
@@ -23,16 +25,23 @@ namespace SigScans
 	int Get_addr_Pakfile__Find()
 	{
 
-		//variables 4.22
-		char pattern4_22[] = "\x48\x89\x5C\x24\x20\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\xD9\x48\x81\xEC\xD0\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\x17\x4C\x8B\xE2\x49\x8B\xF0\x48\x8D\x91\xE8\x00\x00\x00\x4C\x8B\xE9\x49\x8B\xCC\x41\xB8\x01\x00\x00\x00\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x49\x8B\xD4\x48\x8D\x4D\xA7\xE8\x00\x00\x00\x00\x41\x80\xBD\xA2\x01\x00\x00\x00\x0F\x84\x00\x00\x00\x00\x8B\x5D\xAF\x45\x33\xF6\x44\x8D\x4B\xFF\x85\xDB\x75\x03\x45\x8B\xCE";
-		const char* mask4_22 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxx????xxxxxxxx????xxxxxxxxxx????xxxxxxxxxxxxxxxxx";
+		if (pakFileFindAddr == -1)
+		{
+			//variables 4.22
+			char pattern4_22[] = "\x48\x89\x5C\x24\x20\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\xD9\x48\x81\xEC\xD0\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\x17\x4C\x8B\xE2\x49\x8B\xF0\x48\x8D\x91\xE8\x00\x00\x00\x4C\x8B\xE9\x49\x8B\xCC\x41\xB8\x01\x00\x00\x00\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x49\x8B\xD4\x48\x8D\x4D\xA7\xE8\x00\x00\x00\x00\x41\x80\xBD\xA2\x01\x00\x00\x00\x0F\x84\x00\x00\x00\x00\x8B\x5D\xAF\x45\x33\xF6\x44\x8D\x4B\xFF\x85\xDB\x75\x03\x45\x8B\xCE";
+			const char* mask4_22 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxx????xxxxxxxx????xxxxxxxxxx????xxxxxxxxxxxxxxxxx";
+
+
+			//Run pattern scan
+			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_22), mask4_22);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
+		}
 		
-
-		//Run pattern scan
-		auto pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_22), mask4_22);
-		
-
-
 		//Check next version (SPECIAL CASE)
 		if (pakFileFindAddr == -1)
 		{
@@ -48,6 +57,8 @@ namespace SigScans
 			{
 				bSpecialCaseGame = true;
 				DQXI_S = true;
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
 			}
 
 		}
@@ -65,6 +76,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_21), mask4_21);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -79,6 +96,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_18), mask4_18);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -93,6 +116,31 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_20), mask4_20);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
+		}
+
+		//Next Version Scan
+		if (pakFileFindAddr == -1)
+		{
+
+			//variables 4.20.2.0 Tropico6
+			char pattern[] = "\x48\x89\x5C\x24\x00\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x83\xEC\x50\x4C\x8B\xEA\x49\x8B\xF8\x48\x8D\x91\x00\x00\x00\x00\x48\x8B\xE9\x49\x8B\xCD\x41\xB8\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x49\x8B\xD5\x48\x8D\x4C\x24\x00\xE8\x00\x00\x00\x00\x80\xBD\x00\x00\x00\x00\x00\x0F\x84\x00\x00\x00\x00\x8B\x4C\x24\x38\x33\xF6\x44\x8D\x51\xFF\x85\xC9\x75\x03\x44\x8B\xD6";
+			const char* mask = "xxxx?xxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxx????x????xxxx????xxxxxxx?x????xx?????xx????xxxxxxxxxxxxxxxxx";
+
+
+			//Run pattern scan
+			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -107,6 +155,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_19), mask4_19);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -121,6 +175,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_17), mask4_17);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -135,6 +195,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_16), mask4_16);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -149,6 +215,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_15), mask4_15);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -163,6 +235,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_14), mask4_14);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -177,6 +255,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 		//Next Version Scan
@@ -190,6 +274,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -204,6 +294,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_25_3), mask4_25_3);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -218,6 +314,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_25_2), mask4_25_2);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -232,6 +334,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_26), mask4_26);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -246,6 +354,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_13), mask4_13);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -260,6 +374,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12), mask4_12);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -275,6 +395,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12_NRA), mask4_12_NRA);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 		//Next Version Scan
@@ -288,6 +414,12 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -302,6 +434,13 @@ namespace SigScans
 
 			//Run pattern scan
 			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
+
 		}
 
 
@@ -321,6 +460,7 @@ namespace SigScans
 			if (pakFileFindAddr != -1)
 			{
 				bNoIsNonPakFileNameAllowed = true;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
 			}
 		}
 
@@ -339,11 +479,31 @@ namespace SigScans
 			if (pakFileFindAddr != -1)
 			{
 				bNoIsNonPakFileNameAllowed = true;
-
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
 			}
 		}
 
 		
+		//Next Version Scan
+		if (pakFileFindAddr == -1)
+		{
+
+			//variables 4.7
+			char pattern[] = "\x83\xEC\x1C\x53\x8B\x5C\x24\x24\x55\x56\x8B\xE9\x33\xF6\x57\x6A\x01\x8B\xCB\x8D\xBD\x00\x00\x00\x00\x57\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x8D\x44\x24\x20\x53\x50\xE8\x00\x00\x00\x00\x83\xC4\x08\xB8\x00\x00\x00\x00\x39\x74\x24\x24\x8B\xCD\x0F\x45\x44\x24\x00\x50\xE8\x00\x00\x00\x00\x89\x44\x24\x30\x85\xC0\x0F\x84\x00\x00\x00\x00\x8B\x4F\x04\x85\xC9\x74\x03\x49\xEB\x02";
+			const char* mask = "xxxxxxxxxxxxxxxxxxxxx????xx????xxxx????xxxxxxx????xxxx????xxxxxxxxxx?xx????xxxxxxxx????xxxxxxxxxx";
+
+
+			//Run pattern scan
+			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = true;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
+		}
+
+
 
 		//Exit
 		if (pakFileFindAddr == -1)
@@ -382,13 +542,20 @@ namespace SigScans
 	int Get_IsNonPakFileNameAllowedAddr()
 	{
 
-		//variables 4.22
-		char pattern4_22[] = "\x48\x89\x5C\x24\x10\x48\x89\x6C\x24\x18\x56\x57\x41\x56\x48\x83\xEC\x30\x48\x8B\xF9\x45\x33\xC0\x48\x8D\x4C\x24\x20\x4C\x8B\xF2\xE8\x00\x00\x00\x00\x48\x8D\x2D\x00\x00\x00\x00\x83\x78\x08\x00\x74\x05\x48\x8B\x10\xEB\x03";
-		const char* mask4_22 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxx????xxxxxxxxxxx";
+		if (IsNonPakFileNameAllowedAddr == -1)
+		{
+			//variables 4.22
+			char pattern4_22[] = "\x48\x89\x5C\x24\x10\x48\x89\x6C\x24\x18\x56\x57\x41\x56\x48\x83\xEC\x30\x48\x8B\xF9\x45\x33\xC0\x48\x8D\x4C\x24\x20\x4C\x8B\xF2\xE8\x00\x00\x00\x00\x48\x8D\x2D\x00\x00\x00\x00\x83\x78\x08\x00\x74\x05\x48\x8B\x10\xEB\x03";
+			const char* mask4_22 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxx????xxxxxxxxxxx";
 
-		//Run pattern scan 4.22
-		auto IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_22), mask4_22);
+			//Run pattern scan 4.22
+			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_22), mask4_22);
 
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
+		}
 
 
 		//Check next version
@@ -400,6 +567,11 @@ namespace SigScans
 			char pattern4_232[] = "";
 			//Run pattern scan 4.23
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_23), mask4_23);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -412,6 +584,11 @@ namespace SigScans
 
 			//Run pattern scan 4.24.x
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 		//Check next version
@@ -424,6 +601,10 @@ namespace SigScans
 			//Run pattern scan 4.24.3
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_24), mask4_24);
 
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -437,6 +618,11 @@ namespace SigScans
 
 			//Run pattern scan 4.20, 4.21
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_21), mask4_21);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -450,6 +636,11 @@ namespace SigScans
 
 			//Run pattern scan 4.18
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_18), mask4_18);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -463,6 +654,11 @@ namespace SigScans
 
 			//Run pattern scan 4.19
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_19), mask4_19);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -476,6 +672,11 @@ namespace SigScans
 
 			//Run pattern scan 4.17
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_17), mask4_17);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -489,6 +690,11 @@ namespace SigScans
 
 			//Run pattern scan 4.16
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_16), mask4_16);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -502,6 +708,11 @@ namespace SigScans
 
 			//Run pattern scan 4.15
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_15), mask4_15);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -515,6 +726,11 @@ namespace SigScans
 
 			//Run pattern scan 4.14
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_14), mask4_14);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -528,6 +744,11 @@ namespace SigScans
 
 			//Run pattern scan 4.25
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_25), mask4_25);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -541,6 +762,11 @@ namespace SigScans
 
 			//Run pattern scan 4.26
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_26), mask4_26);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -554,6 +780,11 @@ namespace SigScans
 
 			//Run pattern scan 4.13
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_13), mask4_13);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -567,6 +798,11 @@ namespace SigScans
 
 			//Run pattern scan 4.12
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12), mask4_12);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 
@@ -580,6 +816,11 @@ namespace SigScans
 
 			//Run pattern scan 4.12
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern4_12_NRA), mask4_12_NRA);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 		//Check next version
@@ -592,6 +833,11 @@ namespace SigScans
 
 			//Run pattern scan 4.21
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 		//Check next version
@@ -604,6 +850,11 @@ namespace SigScans
 
 			//Run pattern scan 4.27.1
 			IsNonPakFileNameAllowedAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (IsNonPakFileNameAllowedAddr != -1)
+			{
+				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
 		}
 
 

@@ -1,0 +1,9 @@
+﻿  dllmain.cpp
+C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\UMU\dllmain.cpp(228,8): warning C4101: 'dwOld': unreferenced local variable
+     Creating library C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\Release\UMU.lib and object C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\Release\UMU.exp
+  Generating code
+  4 of 141 functions ( 2.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  UMU.vcxproj -> C:\Users\GHFear\Documents\GitHub\UnrealModUnlocker-Public\Release\UMU.dll
