@@ -1,0 +1,12 @@
+
+.vs/UMU/v16/.suo
+.vs/UMU/v16/Browse.VC.db
+.vs/UMU/v16/Browse.VC.db-shm
+.vs/UMU/v16/Browse.VC.db-wal
+.vs/UMU/v16/Browse.VC.opendb
+.vs/UMU/v16/ipch/AutoPCH/c0fccb6c9ec9d75/DLLMAIN.ipch
+UMU/Release/*
+UMU/x64/Release/*
+UMU/x64/Debug/*
+x64/Release/*
+
