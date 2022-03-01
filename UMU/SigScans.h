@@ -444,6 +444,27 @@ namespace SigScans
 		}
 
 
+		//Next Version Scan 4.21 Citadel
+		if (pakFileFindAddr == -1)
+		{
+
+			//variables 4.21 Citadel
+			char pattern[] = "\x48\x89\x5C\x24\x00\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\x17\x4C\x8B\xE2\x49\x8B\xF8\x48\x8D\x91\x00\x00\x00\x00\x4C\x8B\xE9\x49\x8B\xCC\x41\xB8\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00\x49\x8B\xD4\x48\x8D\x4D\x9F\xE8\x00\x00\x00\x00\x41\x80\xBD\x00\x00\x00\x00\x00\x0F\x84\x00\x00\x00\x00\x8B\x5D\xA7\x33\xF6\x44\x8D\x4B\xFF\x85\xDB\x75\x03\x44\x8B\xCE";
+			const char* mask = "xxxx?xxxxxxxxxxxxxxx?xxx????xxx????xxxxxxxxxxxxxxxx????xxxxxxxx????x????xxxx????xxxxxxxx????xxx?????xx????xxxxxxxxxxxxxxxx";
+
+
+			//Run pattern scan
+			pakFileFindAddr = Util::StartSigScanner(GetModuleHandleW(nullptr), reinterpret_cast<const unsigned char*>(pattern), mask);
+
+			if (pakFileFindAddr != -1)
+			{
+				bNoIsNonPakFileNameAllowed = false;
+				return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
+			}
+
+		}
+
+
 		//Start Sigscans of OLD builds with no IsNoPakFileNameAllowed
 		//Next Version Scan
 		if (pakFileFindAddr == -1)
@@ -856,6 +877,7 @@ namespace SigScans
 				return IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
 			}
 		}
+
 
 
 		//Exit
