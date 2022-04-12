@@ -20,11 +20,11 @@ Done!
 Added support for 4.0 | 4.1 | 4.2 | 4.3 | 4.4 | 4.5 | 4.6 and 4.7 and can now confirm this tool has 100% support for Unreal Engine 4
 games as long as they are compiled with the standard visual studio compiler settings.
 
--Added support for a non-standard compiler output found in BioMutant.
+-Added support for a different compiler output for 4.16 that was found in Life Is Strange 2.
 
--Added support for a non-standard compiler output found in Kena.
+-Added support for a different compiler output for 4.25 that was found in Kena.
 
--Added support for a non-standard compiler output found in Life Is Strange 2.
+-Added support for a different compiler output for 4.18 that was found in Biomutant.
 
 I will add further compatibility for non-standard compiler settings and non-standard compilers to keep this
 updated with the Unreal Mod Unlocker Basic and pro project as people report issues with comaptibility to me.
