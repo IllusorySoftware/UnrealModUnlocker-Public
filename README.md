@@ -17,7 +17,10 @@ Done!
 
 ## 1.0.0 Changes:
 
-Added a signature for the FindFileInPakFiles() function in a build of 4.21 that could be found in Citadel-Win64-Shipping.exe
+Tested with 4.0 | 4.1 | 4.2 | 4.3 | 4.4 | 4.5 | 4.6 and 4.7 and can now confirm this tool has 100% support for Unreal Engine 4
+games as long as they are compiled with the standard visual studio compiler settings.
+I will add further compatibility for non-standard compiler settings and non-standard compilers to keep this
+updated with the Unreal Mod Unlocker Basic and pro project as people report issues with comaptibility to me.
 
 
 ## How to use:
