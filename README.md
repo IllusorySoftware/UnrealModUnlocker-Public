@@ -1,4 +1,10 @@
-# UnrealModUnlocker-Public 0.26.8
+# UnrealModUnlocker-Public 1.0.0
+
+UnrealModUnlocker Public and UnrealModUnlocker Basic are NOT the same codebase.
+UnrealModUnlocker Public ONLY contains code for the loose file loading part of the UMU Project.
+Since UnrealModUnlocker Public now supports ALL version of Unreal Engine 4 (compiled with the standard compiler settings in visual studio),
+it is now considered FINAL and version 1.0.0.
+
 Unlocks loading of Third Party Unreal Engine 4 loose files for 75-90% of UE4 games.
 This software is for unlocking loading of loose file packages (.uasset | .ubulk | .uexp | .umap and any other file you could normally find inside the PAK archives).
 Any file already in a PAK archive has a virtual path. (You can find filetype and filepath with UMODEL or FMODEL)
@@ -9,7 +15,7 @@ Make sure to have the UnrealModUnlocker installed in the Game/ProjectName/Binari
 Run game!
 Done!
 
-## 0.26.8 Changes:
+## 1.0.0 Changes:
 
 Added a signature for the FindFileInPakFiles() function in a build of 4.21 that could be found in Citadel-Win64-Shipping.exe
 
@@ -31,14 +37,14 @@ Added a signature for the FindFileInPakFiles() function in a build of 4.21 that 
 
 Engine  | Version | Supported Architecture |  Compatibility
 ------------- | ------------- | ------------- | -------------
-Unreal Engine | 4.0  | NONE  | NOT Supported
-Unreal Engine | 4.1  | NONE  | NOT Supported
-Unreal Engine | 4.2  | NONE  | NOT Supported
-Unreal Engine | 4.3  | NONE  | NOT Supported
-Unreal Engine | 4.4  | NONE  | NOT Supported
-Unreal Engine | 4.5  | NONE  | NOT Supported
-Unreal Engine | 4.6  | NONE  | NOT Supported
-Unreal Engine | 4.7  | NONE  | NOT Supported
+Unreal Engine | 4.0  | x64  | Supported
+Unreal Engine | 4.1  | x64  | Supported
+Unreal Engine | 4.2  | x64  | Supported
+Unreal Engine | 4.3  | x64  | Supported
+Unreal Engine | 4.4  | x64  | Supported
+Unreal Engine | 4.5  | x64  | Supported
+Unreal Engine | 4.6  | x64  | Supported
+Unreal Engine | 4.7  | x64  | Supported
 Unreal Engine | 4.8  | x64  | Supported
 Unreal Engine | 4.9  | x64  | Supported
 Unreal Engine | 4.10  | x64  | Supported
