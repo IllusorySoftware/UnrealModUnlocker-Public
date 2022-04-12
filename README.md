@@ -22,7 +22,9 @@ games as long as they are compiled with the standard visual studio compiler sett
 
 -Added support for a non-standard compiler output found in BioMutant.
 
--Added Support for a non-standard compiler output found in Kena.
+-Added support for a non-standard compiler output found in Kena.
+
+-Added support for a non-standard compiler output found in Life Is Strange 2.
 
 I will add further compatibility for non-standard compiler settings and non-standard compilers to keep this
 updated with the Unreal Mod Unlocker Basic and pro project as people report issues with comaptibility to me.
