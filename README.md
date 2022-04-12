@@ -5,7 +5,7 @@ UnrealModUnlocker Public ONLY contains code for the loose file loading part of t
 Since UnrealModUnlocker Public now supports ALL version of Unreal Engine 4 (compiled with the standard compiler settings in visual studio),
 it is now considered FINAL and version 1.0.0.
 
-Unlocks loading of Third Party Unreal Engine 4 loose files for 75-90% of UE4 games.
+Unlocks loading of Third Party Unreal Engine 4 loose files for 90-95% of UE4 games.
 This software is for unlocking loading of loose file packages (.uasset | .ubulk | .uexp | .umap and any other file you could normally find inside the PAK archives).
 Any file already in a PAK archive has a virtual path. (You can find filetype and filepath with UMODEL or FMODEL)
 Recreate the same filetype and filepath in an Unreal Engine 4 project.
