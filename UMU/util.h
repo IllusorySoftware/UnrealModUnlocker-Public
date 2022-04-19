@@ -12,7 +12,7 @@ namespace Util
 
 
 
-	uintptr_t SigScanner(uintptr_t start, size_t length, const unsigned char* pattern, const char* mask)
+	static uintptr_t SigScanner(uintptr_t start, size_t length, const unsigned char* pattern, const char* mask)
 	{
 		size_t position = 0;
 		auto maskLen = std::strlen(mask) - 1;
@@ -37,7 +37,7 @@ namespace Util
 
 		return -1;
 	}
-	uintptr_t StartSigScanner(HMODULE module, const unsigned char* pattern, const char* mask)
+	static uintptr_t StartSigScanner(HMODULE module, const unsigned char* pattern, const char* mask)
 	{
 		MODULEINFO info = { };
 		GetModuleInformation(GetCurrentProcess(), module, &info, sizeof(MODULEINFO));

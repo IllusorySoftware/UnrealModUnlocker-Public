@@ -13,80 +13,131 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\HDE">
+      <UniqueIdentifier>{215f78b0-0b8e-4b12-96f0-11e2e3031b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DXGIProxy">
+      <UniqueIdentifier>{cf5d8f55-0c65-4527-ba47-1daedb844c69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Memory">
+      <UniqueIdentifier>{0c2b098a-4f59-4ada-bdd0-f3bab523a5ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Memory\FindFunctionsAndVars">
+      <UniqueIdentifier>{f88075c7-e774-4401-8310-72fbdfb61aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Memory\SigScanMethods">
+      <UniqueIdentifier>{038a39e9-624d-4578-8b35-a17a6766d26c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MinHook">
+      <UniqueIdentifier>{abac8adc-f457-448a-9f3a-1c64ae96ecd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Other">
+      <UniqueIdentifier>{47b87b79-d37e-43c8-99cb-cd0d002d3823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DXGIProxy">
+      <UniqueIdentifier>{c9bbe053-785a-4e0d-bef7-871981b9d70f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HDE">
+      <UniqueIdentifier>{bcae9d20-b8e8-442e-869a-871c9b3e8c0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MinHook">
+      <UniqueIdentifier>{81c1c29f-a9ee-484c-859a-d937aba8b620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Other">
+      <UniqueIdentifier>{2ec7194d-24a9-4cf7-9c55-ac1dbe76d449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory">
+      <UniqueIdentifier>{6255af17-0b67-42dd-869f-7204f5d770bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory\FindFunctionsAndVars">
+      <UniqueIdentifier>{05681bbc-0436-4dc2-ac26-48fd2f1ee069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FunctionHooks">
+      <UniqueIdentifier>{e49bef51-03fe-4de2-afb6-240b7b9ed3f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MinHook\MinHook.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MinHook\buffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MinHook\trampoline.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MinHook\hde\hde32.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\HDE</Filter>
     </ClInclude>
     <ClInclude Include="MinHook\hde\hde64.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MinHook\hde\pstdint.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\HDE</Filter>
     </ClInclude>
     <ClInclude Include="MinHook\hde\table32.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\HDE</Filter>
     </ClInclude>
     <ClInclude Include="MinHook\hde\table64.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\HDE</Filter>
     </ClInclude>
     <ClInclude Include="proxy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="global.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SigScans.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DXGIProxy</Filter>
     </ClInclude>
     <ClInclude Include="Pattern.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Memory\SigScanMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>Header Files\Memory\SigScanMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="SigScans.h">
+      <Filter>Header Files\Memory\FindFunctionsAndVars</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\buffer.h">
+      <Filter>Header Files\MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\MinHook.h">
+      <Filter>Header Files\MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\hde\pstdint.h">
+      <Filter>Header Files\MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\trampoline.h">
+      <Filter>Header Files\MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionSignatures.h">
+      <Filter>Header Files\Memory\FindFunctionsAndVars</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionHooks.h">
+      <Filter>Header Files\FunctionHooks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MinHook\buffer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MinHook\hook.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MinHook\trampoline.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="proxy.cpp">
+      <Filter>Source Files\DXGIProxy</Filter>
     </ClCompile>
     <ClCompile Include="MinHook\hde\hde32.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\HDE</Filter>
     </ClCompile>
     <ClCompile Include="MinHook\hde\hde64.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\HDE</Filter>
     </ClCompile>
-    <ClCompile Include="proxy.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MinHook\hook.c">
+      <Filter>Source Files\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\buffer.c">
+      <Filter>Source Files\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\trampoline.c">
+      <Filter>Source Files\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionSignatures.cpp">
+      <Filter>Source Files\Memory\FindFunctionsAndVars</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="proxy.def">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DXGIProxy</Filter>
     </None>
   </ItemGroup>
 </Project>

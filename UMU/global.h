@@ -6,7 +6,7 @@
 
 namespace Global
 {
-	DWORD_PTR BaseAddress;
-	MODULEINFO info;
+	static DWORD_PTR BaseAddress;
+	static MODULEINFO info;
 
 }
