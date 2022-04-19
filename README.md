@@ -17,7 +17,10 @@ Done!
 
 ## 1.0.1 Changes:
 
-**GENERAL CODE CLEAN UP**
+**-GENERAL CODE CLEAN UP**
+
+-Added the optimized function signatures to this Public build for optimal UE4 version support.
+
 
 
 ## How to use:
