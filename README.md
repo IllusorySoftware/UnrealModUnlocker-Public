@@ -22,7 +22,7 @@ Done!
 
 
 ## How to use:
-**Step 1:** Build the source for 64-Bit Release / or download the binary from the "Actions -> Latest Worflow Run -> Summary" page.
+**Step 1:** Build the source for 64-Bit Release / or download the binary from the "[Actions](https://github.com/IllusorySoftware/UnrealModUnlocker-Public/actions) -> Latest Worflow Run -> Summary" page.
 
 **Step 2:** Rename output DLL to dxgi.dll
 
