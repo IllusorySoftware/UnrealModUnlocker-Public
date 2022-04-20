@@ -7,13 +7,10 @@ it is now considered FINAL and version 1.0.0.
 
 Unlocks loading of Third Party Unreal Engine 4 loose files for 90-95% of UE4 games.  
 This software is for unlocking loading of loose file packages (.uasset | .ubulk | .uexp | .umap and any other file you could normally find inside the PAK archives).  
-Any file already in a PAK archive has a virtual path. (You can find filetype and filepath with UMODEL or FMODEL)  
-Recreate the same filetype and filepath in an Unreal Engine 4 project.  
-Cook files in UE4.  
-Copy the "modded" file with the proper file path structure into the correct place in the game folders.  
-Make sure to have the UnrealModUnlocker installed in the Game/ProjectName/Binaries/Win64/ folder.  
-Run game!  
-Done!  
+
+## How to make mods (The Basics of Unreal Engine 4 Modding Tutorial Series):  
+Click on the GIF to start watching the playlist!  
+[![SC2 Video](YouTube.gif)](https://www.youtube.com/watch?v=ZZrEZMi6X5o&list=PLQyrynUmnHDsB8CHILpZ_9AYXODkaNBQE)
 
 ## 1.0.2 Changes:
 
@@ -69,11 +66,6 @@ Unreal Engine | 4.27  | x64  | Supported
 
 ## How to add support for YOUR game:
 Tutorial to help you add support for your game: https://www.youtube.com/watch?v=Uf3cArpU6Xk
-
-
-## How to make mods (The Basics of Unreal Engine 4 Modding Tutorial Series):  
-Click on the GIF to start watching the playlist!  
-[![SC2 Video](YouTube.gif)](https://www.youtube.com/watch?v=ZZrEZMi6X5o&list=PLQyrynUmnHDsB8CHILpZ_9AYXODkaNBQE)
 
 
 ### Credits:
