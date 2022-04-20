@@ -72,7 +72,8 @@ Tutorial to help you add support for your game: https://www.youtube.com/watch?v=
 
 
 ## How to make mods (The Basics of Unreal Engine 4 Modding Tutorial Series):  
-[![SC2 Video](YouTube.gif)](https://www.youtube.com/watch?v=ZZrEZMi6X5o&list=PLQyrynUmnHDsB8CHILpZ_9AYXODkaNBQE "The Basics of Unreal Engine 4 Modding Tutorial Series - Click to Watch!)
+Click on the GIF to start watching the playlist!  
+[![SC2 Video](YouTube.gif)](https://www.youtube.com/watch?v=ZZrEZMi6X5o&list=PLQyrynUmnHDsB8CHILpZ_9AYXODkaNBQE)
 
 
 ### Credits:
