@@ -150,7 +150,7 @@
       <Filter>Source Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
     </ClCompile>
     <ClCompile Include="IsNonPakFileNameAllowedScanObj.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
