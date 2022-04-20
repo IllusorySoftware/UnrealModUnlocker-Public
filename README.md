@@ -14,11 +14,6 @@ This software is for unlocking loading of loose file packages (.uasset | .ubulk 
 Click on the GIF to start watching the playlist!  
 [![SC2 Video](YouTube.gif)](https://www.youtube.com/watch?v=ZZrEZMi6X5o&list=PLQyrynUmnHDsB8CHILpZ_9AYXODkaNBQE)
 
-## 1.0.2 Changes:
-
-**-GENERAL CODE CLEAN UP**
-
-
 
 ## How to use:
 **Step 1:** Build the source for 64-Bit Release / or download the binary from the "[Actions](https://github.com/IllusorySoftware/UnrealModUnlocker-Public/actions) -> Latest Worflow Run -> Summary" page.
@@ -31,6 +26,10 @@ Click on the GIF to start watching the playlist!
 
 **Step 5:** Profit!
 
+
+## 1.0.2 Changes:
+
+**-GENERAL CODE CLEAN UP**
 
 
 ## Compatibility:
