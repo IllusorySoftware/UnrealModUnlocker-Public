@@ -55,6 +55,12 @@
     <Filter Include="Header Files\FunctionHooks">
       <UniqueIdentifier>{e49bef51-03fe-4de2-afb6-240b7b9ed3f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Memory\FindFunctionsAndVars\SigScanClasses">
+      <UniqueIdentifier>{689c7a4d-26df-43b7-abb1-c6ff74675669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory\FindFunctionsAndVars\SigScanClasses">
+      <UniqueIdentifier>{5f20c9b7-6ca3-476f-931e-7a38a974a278}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MinHook\hde\hde32.h">
@@ -105,6 +111,12 @@
     <ClInclude Include="FunctionHooks.h">
       <Filter>Header Files\FunctionHooks</Filter>
     </ClInclude>
+    <ClInclude Include="FindPakScanObj.h">
+      <Filter>Header Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="IsNonPakFileNameAllowedScanObj.h">
+      <Filter>Header Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -133,6 +145,12 @@
     </ClCompile>
     <ClCompile Include="FunctionSignatures.cpp">
       <Filter>Source Files\Memory\FindFunctionsAndVars</Filter>
+    </ClCompile>
+    <ClCompile Include="FindPakScanObj.cpp">
+      <Filter>Source Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="IsNonPakFileNameAllowedScanObj.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

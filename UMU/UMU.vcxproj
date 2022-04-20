@@ -158,9 +158,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="FindPakScanObj.h" />
     <ClInclude Include="FunctionHooks.h" />
     <ClInclude Include="FunctionSignatures.h" />
     <ClInclude Include="global.h" />
+    <ClInclude Include="IsNonPakFileNameAllowedScanObj.h" />
     <ClInclude Include="MinHook\buffer.h" />
     <ClInclude Include="MinHook\hde\hde32.h" />
     <ClInclude Include="MinHook\hde\hde64.h" />
@@ -177,7 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="FindPakScanObj.cpp" />
     <ClCompile Include="FunctionSignatures.cpp" />
+    <ClCompile Include="IsNonPakFileNameAllowedScanObj.cpp" />
     <ClCompile Include="MinHook\buffer.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
