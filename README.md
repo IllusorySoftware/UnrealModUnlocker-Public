@@ -1,4 +1,4 @@
-# UnrealModUnlocker-Public 1.0.1
+# UnrealModUnlocker-Public 1.0.2
 
 UnrealModUnlocker Public and UnrealModUnlocker Basic are NOT the same codebase.
 UnrealModUnlocker Public ONLY contains code for the loose file loading part of the UMU Project.
@@ -15,11 +15,9 @@ Make sure to have the UnrealModUnlocker installed in the Game/ProjectName/Binari
 Run game!
 Done!
 
-## 1.0.1 Changes:
+## 1.0.2 Changes:
 
 **-GENERAL CODE CLEAN UP**
-
--Added the optimized function signatures to this Public build for optimal UE4 version support.
 
 
 
