@@ -238,7 +238,6 @@ int FunctionSignatures::Get_addr_Pakfile__Find()
 		return -1;
 	}
 
-
 	return pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
 }
 
