@@ -71,6 +71,9 @@ Unreal Engine | 4.27  | x64  | Supported
 Tutorial to help you add support for your game: https://www.youtube.com/watch?v=Uf3cArpU6Xk
 
 
+## How to make mods (The Basics of Unreal Engine 4 Modding Tutorial Series):  
+https://www.youtube.com/watch?v=ZZrEZMi6X5o&list=PLQyrynUmnHDsB8CHILpZ_9AYXODkaNBQE
+
 
 ### Credits:
 Special Thanks to emoose for DQXIHook and dga711 for ezpz, which made this possible.
