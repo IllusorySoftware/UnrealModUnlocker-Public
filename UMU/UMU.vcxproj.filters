@@ -75,17 +75,14 @@
     <ClInclude Include="MinHook\hde\table64.h">
       <Filter>Header Files\HDE</Filter>
     </ClInclude>
-    <ClInclude Include="proxy.h">
+    <ClInclude Include="DXGIProxy\proxy.h">
       <Filter>Header Files\DXGIProxy</Filter>
     </ClInclude>
-    <ClInclude Include="Pattern.h">
+    <ClInclude Include="Tools\Pattern.h">
       <Filter>Header Files\Memory\SigScanMethods</Filter>
     </ClInclude>
-    <ClInclude Include="util.h">
+    <ClInclude Include="Tools\util.h">
       <Filter>Header Files\Memory\SigScanMethods</Filter>
-    </ClInclude>
-    <ClInclude Include="SigScans.h">
-      <Filter>Header Files\Memory\FindFunctionsAndVars</Filter>
     </ClInclude>
     <ClInclude Include="MinHook\buffer.h">
       <Filter>Header Files\MinHook</Filter>
@@ -99,22 +96,22 @@
     <ClInclude Include="MinHook\trampoline.h">
       <Filter>Header Files\MinHook</Filter>
     </ClInclude>
-    <ClInclude Include="FunctionSignatures.h">
+    <ClInclude Include="UMUClasses\FunctionSignatures.h">
       <Filter>Header Files\Memory\FindFunctionsAndVars</Filter>
     </ClInclude>
-    <ClInclude Include="global.h">
+    <ClInclude Include="Other\global.h">
       <Filter>Header Files\Other</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files\Other</Filter>
     </ClInclude>
-    <ClInclude Include="FunctionHooks.h">
+    <ClInclude Include="UMUClasses\FunctionHooks.h">
       <Filter>Header Files\FunctionHooks</Filter>
     </ClInclude>
-    <ClInclude Include="FindPakScanObj.h">
+    <ClInclude Include="UMUClasses\FindPakScanObj.h">
       <Filter>Header Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
     </ClInclude>
-    <ClInclude Include="IsNonPakFileNameAllowedScanObj.h">
+    <ClInclude Include="UMUClasses\IsNonPakFileNameAllowedScanObj.h">
       <Filter>Header Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
     </ClInclude>
   </ItemGroup>
@@ -122,7 +119,7 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="proxy.cpp">
+    <ClCompile Include="DXGIProxy\proxy.cpp">
       <Filter>Source Files\DXGIProxy</Filter>
     </ClCompile>
     <ClCompile Include="MinHook\hde\hde32.c">
@@ -143,18 +140,18 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files\Other</Filter>
     </ClCompile>
-    <ClCompile Include="FunctionSignatures.cpp">
+    <ClCompile Include="UMUClasses\FunctionSignatures.cpp">
       <Filter>Source Files\Memory\FindFunctionsAndVars</Filter>
     </ClCompile>
-    <ClCompile Include="FindPakScanObj.cpp">
+    <ClCompile Include="UMUClasses\FindPakScanObj.cpp">
       <Filter>Source Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
     </ClCompile>
-    <ClCompile Include="IsNonPakFileNameAllowedScanObj.cpp">
+    <ClCompile Include="UMUClasses\IsNonPakFileNameAllowedScanObj.cpp">
       <Filter>Source Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="proxy.def">
+    <None Include="DXGIProxy\proxy.def">
       <Filter>Source Files\DXGIProxy</Filter>
     </None>
   </ItemGroup>

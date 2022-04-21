@@ -3,7 +3,7 @@
 #include <string>
 #include <stdint.h>
 #include <stdio.h>
-#include "stdafx.h"
+#include "../stdafx.h"
 
 namespace FunctionHooks
 {

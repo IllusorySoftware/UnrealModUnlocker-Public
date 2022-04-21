@@ -153,16 +153,16 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>proxy.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>DXGIProxy/proxy.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="FindPakScanObj.h" />
-    <ClInclude Include="FunctionHooks.h" />
-    <ClInclude Include="FunctionSignatures.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="IsNonPakFileNameAllowedScanObj.h" />
+    <ClInclude Include="UMUClasses\FindPakScanObj.h" />
+    <ClInclude Include="UMUClasses\FunctionHooks.h" />
+    <ClInclude Include="UMUClasses\FunctionSignatures.h" />
+    <ClInclude Include="Other\global.h" />
+    <ClInclude Include="UMUClasses\IsNonPakFileNameAllowedScanObj.h" />
     <ClInclude Include="MinHook\buffer.h" />
     <ClInclude Include="MinHook\hde\hde32.h" />
     <ClInclude Include="MinHook\hde\hde64.h" />
@@ -171,17 +171,16 @@
     <ClInclude Include="MinHook\hde\table64.h" />
     <ClInclude Include="MinHook\MinHook.h" />
     <ClInclude Include="MinHook\trampoline.h" />
-    <ClInclude Include="Pattern.h" />
-    <ClInclude Include="proxy.h" />
-    <ClInclude Include="SigScans.h" />
+    <ClInclude Include="Tools\Pattern.h" />
+    <ClInclude Include="DXGIProxy\proxy.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="util.h" />
+    <ClInclude Include="Tools\util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="FindPakScanObj.cpp" />
-    <ClCompile Include="FunctionSignatures.cpp" />
-    <ClCompile Include="IsNonPakFileNameAllowedScanObj.cpp" />
+    <ClCompile Include="UMUClasses\FindPakScanObj.cpp" />
+    <ClCompile Include="UMUClasses\FunctionSignatures.cpp" />
+    <ClCompile Include="UMUClasses\IsNonPakFileNameAllowedScanObj.cpp" />
     <ClCompile Include="MinHook\buffer.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -212,7 +211,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="proxy.cpp" />
+    <ClCompile Include="DXGIProxy\proxy.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -221,7 +220,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="proxy.def" />
+    <None Include="DXGIProxy\proxy.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

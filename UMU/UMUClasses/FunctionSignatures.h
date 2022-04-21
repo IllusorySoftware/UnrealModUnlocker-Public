@@ -1,6 +1,5 @@
 #pragma once
-#include "util.h"
-#include "Pattern.h"
+#include "../Tools/util.h"
 #include "FindPakScanObj.h"
 #include "IsNonPakFileNameAllowedScanObj.h"
 #include <vector>
