@@ -29,8 +29,8 @@ Click on the GIF to start watching the playlist!
 
 ## 1.0.3 Changes:
 
-**-GENERAL CODE CLEAN UP**
--Fixed FindFileInPakFiles Hook Version 2.
+**-GENERAL CODE CLEAN UP**  
+-Fixed FindFileInPakFiles Hook Version 2.  
 
 
 ## Compatibility:
