@@ -1,11 +1,11 @@
-# UnrealModUnlocker-Public 1.0.2
+# UnrealModUnlocker-Public 1.0.3
 
 
 ## General Information:  
 UnrealModUnlocker Public and UnrealModUnlocker Basic are NOT from the same codebase.  
 UnrealModUnlocker Public ONLY contains code for the loose file loading part of the UMU Project.  
 Since UnrealModUnlocker Public now supports ALL version of Unreal Engine 4 (compiled with the standard compiler settings in visual studio),  
-it is now considered FINAL and version 1.0.0.  
+it is now considered FINAL and version 1.0.3.  
 
 Unlocks loading of Third Party Unreal Engine 4 loose files for 90-95% of UE4 games.  
 This software is for unlocking loading of loose file packages (.uasset | .ubulk | .uexp | .umap and any other file you could normally find inside the PAK archives).  
@@ -27,9 +27,10 @@ Click on the GIF to start watching the playlist!
 **Step 5:** Profit!
 
 
-## 1.0.2 Changes:
+## 1.0.3 Changes:
 
-**-GENERAL CODE CLEAN UP**
+**-GENERAL CODE CLEAN UP**  
+-Fixed FindFileInPakFiles Hook Version 2.  
 
 
 ## Compatibility:
