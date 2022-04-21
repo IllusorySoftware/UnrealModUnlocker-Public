@@ -12,7 +12,7 @@ This software is for unlocking loading of loose file packages (.uasset | .ubulk 
 
 ## How to make mods (The Basics of Unreal Engine 4 Modding Tutorial Series):  
 Click on the GIF to start watching the playlist!  
-[![SC2 Video](YouTube.gif)](https://www.youtube.com/watch?v=ZZrEZMi6X5o&list=PLQyrynUmnHDsB8CHILpZ_9AYXODkaNBQE)
+[![SC2 Video](UMU/GitHubAssets/YouTube.gif)](https://www.youtube.com/watch?v=ZZrEZMi6X5o&list=PLQyrynUmnHDsB8CHILpZ_9AYXODkaNBQE)
 
 
 ## How to use:
