@@ -1,8 +1,8 @@
 #pragma once
-#include "../Tools/util.h"
-#include "DefaultSigScanProfile.h"
-#include "FindPakSigScanProfile.h"
-#include "IsNonPakFileNameAllowedSigScanProfile.h"
+#include "../../Tools/util.h"
+#include "SigScannerProfiles/DefaultSigScanProfile.h"
+#include "SigScannerProfiles/FindPakSigScanProfile.h"
+#include "SigScannerProfiles/IsNonPakFileNameAllowedSigScanProfile.h"
 #include <vector>
 
 

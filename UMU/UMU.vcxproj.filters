@@ -105,7 +105,7 @@
     <ClInclude Include="MinHook\trampoline.h">
       <Filter>Header Files\MinHook</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\SigScanner.h">
+    <ClInclude Include="UMUClasses\SigScanner\SigScanner.h">
       <Filter>Header Files\UMUClasses\SigScanner</Filter>
     </ClInclude>
     <ClInclude Include="Other\global.h">
@@ -114,16 +114,16 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files\Other</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\LooseFileLoadingHooks.h">
+    <ClInclude Include="UMUClasses\FunctionHooks\LooseFileLoadingHooks.h">
       <Filter>Header Files\UMUClasses\FunctionHooks</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\FindPakSigScanProfile.h">
+    <ClInclude Include="UMUClasses\SigScanner\SigScannerProfiles\FindPakSigScanProfile.h">
       <Filter>Header Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\IsNonPakFileNameAllowedSigScanProfile.h">
+    <ClInclude Include="UMUClasses\SigScanner\SigScannerProfiles\IsNonPakFileNameAllowedSigScanProfile.h">
       <Filter>Header Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\DefaultSigScanProfile.h">
+    <ClInclude Include="UMUClasses\SigScanner\SigScannerProfiles\DefaultSigScanProfile.h">
       <Filter>Header Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClInclude>
   </ItemGroup>
@@ -152,16 +152,16 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files\Other</Filter>
     </ClCompile>
-    <ClCompile Include="UMUClasses\FindPakSigScanProfile.cpp">
+    <ClCompile Include="UMUClasses\SigScanner\SigScannerProfiles\FindPakSigScanProfile.cpp">
       <Filter>Source Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClCompile>
-    <ClCompile Include="UMUClasses\IsNonPakFileNameAllowedSigScanProfile.cpp">
+    <ClCompile Include="UMUClasses\SigScanner\SigScannerProfiles\IsNonPakFileNameAllowedSigScanProfile.cpp">
       <Filter>Source Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClCompile>
-    <ClCompile Include="UMUClasses\SigScanner.cpp">
+    <ClCompile Include="UMUClasses\SigScanner\SigScanner.cpp">
       <Filter>Source Files\UMUClasses\SigScanner</Filter>
     </ClCompile>
-    <ClCompile Include="UMUClasses\DefaultSigScanProfile.cpp">
+    <ClCompile Include="UMUClasses\SigScanner\SigScannerProfiles\DefaultSigScanProfile.cpp">
       <Filter>Source Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClCompile>
   </ItemGroup>
