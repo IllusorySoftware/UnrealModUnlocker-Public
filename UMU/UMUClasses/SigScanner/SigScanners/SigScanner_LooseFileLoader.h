@@ -1,19 +1,19 @@
 #pragma once
-#include "../../Tools/util.h"
-#include "SigScannerProfiles/DefaultSigScanProfile.h"
-#include "SigScannerProfiles/FindPakSigScanProfile.h"
-#include "SigScannerProfiles/IsNonPakFileNameAllowedSigScanProfile.h"
+#include "../../../Tools/util.h"
+#include "../SigScannerProfiles/DefaultSigScanProfile.h"
+#include "../SigScannerProfiles/FindPakSigScanProfile.h"
+#include "../SigScannerProfiles/IsNonPakFileNameAllowedSigScanProfile.h"
 #include <vector>
 
 
-class SigScanner
+class SigScanner_LooseFileLoader
 {
 public:
-	SigScanner();
+	SigScanner_LooseFileLoader();
 	void init();
 	int Get_addr_Pakfile__Find();
 	int Get_IsNonPakFileNameAllowedAddr();
-	~SigScanner();
+	~SigScanner_LooseFileLoader();
 
 public:
 	//Properties

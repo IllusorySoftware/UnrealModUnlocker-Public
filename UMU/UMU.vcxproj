@@ -161,7 +161,7 @@
     <ClInclude Include="UMUClasses\SigScanner\SigScannerProfiles\DefaultSigScanProfile.h" />
     <ClInclude Include="UMUClasses\SigScanner\SigScannerProfiles\FindPakSigScanProfile.h" />
     <ClInclude Include="UMUClasses\FunctionHooks\LooseFileLoadingHooks.h" />
-    <ClInclude Include="UMUClasses\SigScanner\SigScanner.h" />
+    <ClInclude Include="UMUClasses\SigScanner\SigScanners\SigScanner_LooseFileLoader.h" />
     <ClInclude Include="Other\global.h" />
     <ClInclude Include="UMUClasses\SigScanner\SigScannerProfiles\IsNonPakFileNameAllowedSigScanProfile.h" />
     <ClInclude Include="MinHook\buffer.h" />
@@ -181,7 +181,7 @@
     <ClCompile Include="UMUClasses\SigScanner\SigScannerProfiles\DefaultSigScanProfile.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="UMUClasses\SigScanner\SigScannerProfiles\FindPakSigScanProfile.cpp" />
-    <ClCompile Include="UMUClasses\SigScanner\SigScanner.cpp" />
+    <ClCompile Include="UMUClasses\SigScanner\SigScanners\SigScanner_LooseFileLoader.cpp" />
     <ClCompile Include="UMUClasses\SigScanner\SigScannerProfiles\IsNonPakFileNameAllowedSigScanProfile.cpp" />
     <ClCompile Include="MinHook\buffer.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>

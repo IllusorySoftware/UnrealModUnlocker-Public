@@ -1,7 +1,7 @@
-#include "SigScanner.h"
+#include "SigScanner_LooseFileLoader.h"
 
 
-SigScanner::SigScanner()
+SigScanner_LooseFileLoader::SigScanner_LooseFileLoader()
 {
 	
 	//Initialize FunctionSignatures---------------------->
@@ -212,12 +212,12 @@ SigScanner::SigScanner()
 
 }
 
-void SigScanner::init()
+void SigScanner_LooseFileLoader::init()
 {
 	//Might move the init to here later.
 }
 
-int SigScanner::Get_addr_Pakfile__Find()
+int SigScanner_LooseFileLoader::Get_addr_Pakfile__Find()
 {
 	for (const FindPakSigScanProfile findPakSigScanProfile : p_FindPakSigScanProfileVector)
 	{
@@ -241,7 +241,7 @@ int SigScanner::Get_addr_Pakfile__Find()
 	return p_pakFileFindAddr - (uintptr_t)GetModuleHandleW(nullptr);
 }
 
-int SigScanner::Get_IsNonPakFileNameAllowedAddr()
+int SigScanner_LooseFileLoader::Get_IsNonPakFileNameAllowedAddr()
 {
 
 	for (const IsNonPakFileNameAllowedSigScanProfile isNonPakFileNameAllowedSigScanProfile : p_IsNonPakFileNameAllowedSigScanProfileVector)
@@ -265,7 +265,7 @@ int SigScanner::Get_IsNonPakFileNameAllowedAddr()
 	return p_IsNonPakFileNameAllowedAddr - (uintptr_t)GetModuleHandleW(nullptr);
 }
 
-SigScanner::~SigScanner()
+SigScanner_LooseFileLoader::~SigScanner_LooseFileLoader()
 {
 
 }

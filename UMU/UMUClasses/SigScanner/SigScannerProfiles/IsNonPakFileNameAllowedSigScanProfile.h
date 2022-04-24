@@ -7,6 +7,6 @@ public:
 
 
 public:
-	friend class SigScanner;
+	friend class SigScanner_LooseFileLoader;
 };
 

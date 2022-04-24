@@ -70,6 +70,12 @@
     <Filter Include="Source Files\UMUClasses\FunctionHooks">
       <UniqueIdentifier>{61d4d739-ccac-451e-8607-d5b52bcdea56}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\UMUClasses\SigScanner\SigScanners">
+      <UniqueIdentifier>{9fb3183c-f80c-4a94-9a19-8aec5cde4b10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UMUClasses\SigScanner\SigScanners">
+      <UniqueIdentifier>{44b1f4f6-4220-4127-a91d-2f8813510499}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MinHook\hde\hde32.h">
@@ -105,9 +111,6 @@
     <ClInclude Include="MinHook\trampoline.h">
       <Filter>Header Files\MinHook</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\SigScanner\SigScanner.h">
-      <Filter>Header Files\UMUClasses\SigScanner</Filter>
-    </ClInclude>
     <ClInclude Include="Other\global.h">
       <Filter>Header Files\Other</Filter>
     </ClInclude>
@@ -125,6 +128,9 @@
     </ClInclude>
     <ClInclude Include="UMUClasses\SigScanner\SigScannerProfiles\DefaultSigScanProfile.h">
       <Filter>Header Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="UMUClasses\SigScanner\SigScanners\SigScanner_LooseFileLoader.h">
+      <Filter>Header Files\UMUClasses\SigScanner\SigScanners</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -158,11 +164,11 @@
     <ClCompile Include="UMUClasses\SigScanner\SigScannerProfiles\IsNonPakFileNameAllowedSigScanProfile.cpp">
       <Filter>Source Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClCompile>
-    <ClCompile Include="UMUClasses\SigScanner\SigScanner.cpp">
-      <Filter>Source Files\UMUClasses\SigScanner</Filter>
-    </ClCompile>
     <ClCompile Include="UMUClasses\SigScanner\SigScannerProfiles\DefaultSigScanProfile.cpp">
       <Filter>Source Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
+    </ClCompile>
+    <ClCompile Include="UMUClasses\SigScanner\SigScanners\SigScanner_LooseFileLoader.cpp">
+      <Filter>Source Files\UMUClasses\SigScanner\SigScanners</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

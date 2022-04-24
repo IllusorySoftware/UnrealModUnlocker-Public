@@ -7,6 +7,6 @@ public:
 	int p_version = 1;
 	
 public:
-	friend class SigScanner;
+	friend class SigScanner_LooseFileLoader;
 };
 
