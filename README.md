@@ -30,11 +30,11 @@ Click on the GIF to start watching the playlist!
 ## 1.0.4 Changes:
 
 **-GENERAL CODE CLEAN UP**  
--Made lots of reusable classes for hooks, sigscanning and other things.
--Rewrote parts of dllmain.
--Rewrote the SigScanner to use profiles.
--Made the SigScanner profiles easier to understand.
--Wrote a bunch of comments.
+-Made lots of reusable classes for hooks, sigscanning and other things.  
+-Rewrote parts of dllmain.  
+-Rewrote the SigScanner to use profiles.  
+-Made the SigScanner profiles easier to understand.  
+-Wrote a bunch of comments.  
 
 
 ## Compatibility:
