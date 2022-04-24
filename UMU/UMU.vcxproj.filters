@@ -22,9 +22,6 @@
     <Filter Include="Header Files\Memory">
       <UniqueIdentifier>{0c2b098a-4f59-4ada-bdd0-f3bab523a5ca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Memory\FindFunctionsAndVars">
-      <UniqueIdentifier>{f88075c7-e774-4401-8310-72fbdfb61aac}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Memory\SigScanMethods">
       <UniqueIdentifier>{038a39e9-624d-4578-8b35-a17a6766d26c}</UniqueIdentifier>
     </Filter>
@@ -49,17 +46,29 @@
     <Filter Include="Source Files\Memory">
       <UniqueIdentifier>{6255af17-0b67-42dd-869f-7204f5d770bb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Memory\FindFunctionsAndVars">
-      <UniqueIdentifier>{05681bbc-0436-4dc2-ac26-48fd2f1ee069}</UniqueIdentifier>
+    <Filter Include="Header Files\UMUClasses">
+      <UniqueIdentifier>{5522ccbc-a4b6-4ef5-b9ce-c01bb2794a2c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\FunctionHooks">
-      <UniqueIdentifier>{e49bef51-03fe-4de2-afb6-240b7b9ed3f4}</UniqueIdentifier>
+    <Filter Include="Header Files\UMUClasses\SigScanner">
+      <UniqueIdentifier>{f88075c7-e774-4401-8310-72fbdfb61aac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Memory\FindFunctionsAndVars\SigScanClasses">
+    <Filter Include="Header Files\UMUClasses\SigScanner\SigScannerProfiles">
       <UniqueIdentifier>{689c7a4d-26df-43b7-abb1-c6ff74675669}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Memory\FindFunctionsAndVars\SigScanClasses">
-      <UniqueIdentifier>{5f20c9b7-6ca3-476f-931e-7a38a974a278}</UniqueIdentifier>
+    <Filter Include="Header Files\UMUClasses\FunctionHooks">
+      <UniqueIdentifier>{e49bef51-03fe-4de2-afb6-240b7b9ed3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UMUClasses">
+      <UniqueIdentifier>{4088be6b-d428-407e-a4a2-fad5aaf42c26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UMUClasses\SigScanner">
+      <UniqueIdentifier>{3ab3d46b-552c-4979-a323-6a4bac41ff92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UMUClasses\SigScanner\SigScannerProfiles">
+      <UniqueIdentifier>{645e411f-1346-45dd-8a10-281008438127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UMUClasses\FunctionHooks">
+      <UniqueIdentifier>{61d4d739-ccac-451e-8607-d5b52bcdea56}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,8 +105,8 @@
     <ClInclude Include="MinHook\trampoline.h">
       <Filter>Header Files\MinHook</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\FunctionSignatures.h">
-      <Filter>Header Files\Memory\FindFunctionsAndVars</Filter>
+    <ClInclude Include="UMUClasses\SigScanner.h">
+      <Filter>Header Files\UMUClasses\SigScanner</Filter>
     </ClInclude>
     <ClInclude Include="Other\global.h">
       <Filter>Header Files\Other</Filter>
@@ -105,14 +114,17 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files\Other</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\FunctionHooks.h">
-      <Filter>Header Files\FunctionHooks</Filter>
+    <ClInclude Include="UMUClasses\LooseFileLoadingHooks.h">
+      <Filter>Header Files\UMUClasses\FunctionHooks</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\FindPakScanObj.h">
-      <Filter>Header Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
+    <ClInclude Include="UMUClasses\FindPakSigScanProfile.h">
+      <Filter>Header Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClInclude>
-    <ClInclude Include="UMUClasses\IsNonPakFileNameAllowedScanObj.h">
-      <Filter>Header Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
+    <ClInclude Include="UMUClasses\IsNonPakFileNameAllowedSigScanProfile.h">
+      <Filter>Header Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="UMUClasses\DefaultSigScanProfile.h">
+      <Filter>Header Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -140,14 +152,17 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files\Other</Filter>
     </ClCompile>
-    <ClCompile Include="UMUClasses\FunctionSignatures.cpp">
-      <Filter>Source Files\Memory\FindFunctionsAndVars</Filter>
+    <ClCompile Include="UMUClasses\FindPakSigScanProfile.cpp">
+      <Filter>Source Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClCompile>
-    <ClCompile Include="UMUClasses\FindPakScanObj.cpp">
-      <Filter>Source Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
+    <ClCompile Include="UMUClasses\IsNonPakFileNameAllowedSigScanProfile.cpp">
+      <Filter>Source Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClCompile>
-    <ClCompile Include="UMUClasses\IsNonPakFileNameAllowedScanObj.cpp">
-      <Filter>Source Files\Memory\FindFunctionsAndVars\SigScanClasses</Filter>
+    <ClCompile Include="UMUClasses\SigScanner.cpp">
+      <Filter>Source Files\UMUClasses\SigScanner</Filter>
+    </ClCompile>
+    <ClCompile Include="UMUClasses\DefaultSigScanProfile.cpp">
+      <Filter>Source Files\UMUClasses\SigScanner\SigScannerProfiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

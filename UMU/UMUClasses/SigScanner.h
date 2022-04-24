@@ -1,0 +1,76 @@
+#pragma once
+#include "../Tools/util.h"
+#include "DefaultSigScanProfile.h"
+#include "FindPakSigScanProfile.h"
+#include "IsNonPakFileNameAllowedSigScanProfile.h"
+#include <vector>
+
+
+class SigScanner
+{
+public:
+	SigScanner();
+	void init();
+	int Get_addr_Pakfile__Find();
+	int Get_IsNonPakFileNameAllowedAddr();
+	~SigScanner();
+
+public:
+	//Properties
+	bool p_bUses_IsNonPakFileNameAllowed = true;
+	int p_Find_File_In_PakFile_Version = 1;
+	uintptr_t p_pakFileFindAddr = -1;
+	uintptr_t p_IsNonPakFileNameAllowedAddr = -1;
+
+public:
+	FindPakSigScanProfile p_FindPakSigScanProfile_1;
+	FindPakSigScanProfile p_FindPakSigScanProfile_2;
+	FindPakSigScanProfile p_FindPakSigScanProfile_3;
+	FindPakSigScanProfile p_FindPakSigScanProfile_4;
+	FindPakSigScanProfile p_FindPakSigScanProfile_5;
+	FindPakSigScanProfile p_FindPakSigScanProfile_6;
+	FindPakSigScanProfile p_FindPakSigScanProfile_7;
+	FindPakSigScanProfile p_FindPakSigScanProfile_8;
+	FindPakSigScanProfile p_FindPakSigScanProfile_9;
+	FindPakSigScanProfile p_FindPakSigScanProfile_10;
+	FindPakSigScanProfile p_FindPakSigScanProfile_11;
+	FindPakSigScanProfile p_FindPakSigScanProfile_12;
+	FindPakSigScanProfile p_FindPakSigScanProfile_13;
+	FindPakSigScanProfile p_FindPakSigScanProfile_14;
+	FindPakSigScanProfile p_FindPakSigScanProfile_15;
+	FindPakSigScanProfile p_FindPakSigScanProfile_16;
+	FindPakSigScanProfile p_FindPakSigScanProfile_17;
+	FindPakSigScanProfile p_FindPakSigScanProfile_18;
+	FindPakSigScanProfile p_FindPakSigScanProfile_19;
+	FindPakSigScanProfile p_FindPakSigScanProfile_20;
+	std::vector<FindPakSigScanProfile> p_FindPakSigScanProfileVector;
+
+public:
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_1;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_2;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_3;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_4;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_5;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_6;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_7;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_8;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_9;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_10;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_11;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_12;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_13;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_14;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_15;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_16;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_17;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_18;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_19;
+	IsNonPakFileNameAllowedSigScanProfile p_IsNonPakFileNameAllowedSigScanProfile_20;
+	std::vector<IsNonPakFileNameAllowedSigScanProfile> p_IsNonPakFileNameAllowedSigScanProfileVector;
+
+public:
+	friend class FindPakScanObj;
+	friend class IsNonPakFileNameAllowedSigScanProfile;
+
+};
+

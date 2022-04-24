@@ -158,11 +158,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="UMUClasses\FindPakScanObj.h" />
-    <ClInclude Include="UMUClasses\FunctionHooks.h" />
-    <ClInclude Include="UMUClasses\FunctionSignatures.h" />
+    <ClInclude Include="UMUClasses\DefaultSigScanProfile.h" />
+    <ClInclude Include="UMUClasses\FindPakSigScanProfile.h" />
+    <ClInclude Include="UMUClasses\LooseFileLoadingHooks.h" />
+    <ClInclude Include="UMUClasses\SigScanner.h" />
     <ClInclude Include="Other\global.h" />
-    <ClInclude Include="UMUClasses\IsNonPakFileNameAllowedScanObj.h" />
+    <ClInclude Include="UMUClasses\IsNonPakFileNameAllowedSigScanProfile.h" />
     <ClInclude Include="MinHook\buffer.h" />
     <ClInclude Include="MinHook\hde\hde32.h" />
     <ClInclude Include="MinHook\hde\hde64.h" />
@@ -177,10 +178,11 @@
     <ClInclude Include="Tools\util.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UMUClasses\DefaultSigScanProfile.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="UMUClasses\FindPakScanObj.cpp" />
-    <ClCompile Include="UMUClasses\FunctionSignatures.cpp" />
-    <ClCompile Include="UMUClasses\IsNonPakFileNameAllowedScanObj.cpp" />
+    <ClCompile Include="UMUClasses\FindPakSigScanProfile.cpp" />
+    <ClCompile Include="UMUClasses\SigScanner.cpp" />
+    <ClCompile Include="UMUClasses\IsNonPakFileNameAllowedSigScanProfile.cpp" />
     <ClCompile Include="MinHook\buffer.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>

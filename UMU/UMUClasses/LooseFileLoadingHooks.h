@@ -5,10 +5,63 @@
 #include <stdio.h>
 #include "../stdafx.h"
 
-namespace FunctionHooks
+namespace LooseFileLoadingHooks
+
 {
 
 	const wchar_t* GameStart = L"../../../"; // This is at the start of every game path
+
+
+	// LOOSEFILE Error Codes.
+	typedef enum LOOSEFILE_STATUS
+	{
+		LOOSEFILE_VER1_USESISALLOWEDTRUE = 0,
+
+		LOOSEFILE_VER2_USESISALLOWEDTRUE = 1,
+
+		LOOSEFILE_VER1_USESISALLOWEDFALSE,
+
+		LOOSEFILE_VER2_USESISALLOWEDFALSE,
+
+		LOOSEFILE_UNKNOWN
+
+	}
+	LOOSEFILE_STATUS;
+
+
+	LOOSEFILE_STATUS CheckLooseFileStatus(
+		const size_t param_addr_FindFileInPakFiles, 
+		const size_t param_addr_IsNonPakFilenameAllowed, 
+		int param_version, 
+		bool p_bUses_IsNonPakFileNameAllowed
+	)	
+	{
+		LOOSEFILE_STATUS status;
+
+		if (param_addr_FindFileInPakFiles != -1 && param_addr_IsNonPakFilenameAllowed != -1 && param_version == 1 && p_bUses_IsNonPakFileNameAllowed == true)
+		{
+			status = LOOSEFILE_VER1_USESISALLOWEDTRUE;
+		}
+		else if (param_addr_FindFileInPakFiles != -1 && param_addr_IsNonPakFilenameAllowed != -1 && param_version == 2 && p_bUses_IsNonPakFileNameAllowed == true)
+		{
+			status = LOOSEFILE_VER2_USESISALLOWEDTRUE;
+		}
+		else if (param_addr_IsNonPakFilenameAllowed == -1 && param_addr_FindFileInPakFiles != -1 && param_version == 1 && p_bUses_IsNonPakFileNameAllowed == false)
+		{
+			status = LOOSEFILE_VER1_USESISALLOWEDFALSE;
+		}
+		else if (param_addr_IsNonPakFilenameAllowed == -1 && param_addr_FindFileInPakFiles != -1 && param_version == 2 && p_bUses_IsNonPakFileNameAllowed == false)
+		{
+			status = LOOSEFILE_VER2_USESISALLOWEDFALSE;
+		}
+		else
+		{
+			status = LOOSEFILE_UNKNOWN;
+		}
+
+		return status;
+	}
+
 
 	//Check if file exists at path
 	bool DoesFileExist(LPCWSTR path)
@@ -76,7 +129,8 @@ namespace FunctionHooks
 	// This allows us to enter the if statement in IFileHandle* FPakPlatformFile::OpenRead where we can then pass the Filename of our loose file so it loads from loose files only if they are available.
 	__int64 __fastcall IsNonPakFilenameAllowed_Hook(void* thisptr, void* InFilename)
 	{
-
+		// 4.0 ---> 4.11 doesn't have access to this function and doesn't need it.
+		// 4.12 ---> 4.27 Has access to this function and does need it to return 1 to load files outside of a pak.
 		return 1;
 	}
 
