@@ -82,7 +82,8 @@ namespace LooseFileLoadingHooks
 
 		const TCHAR* fname = *(TCHAR**)Filename;
 
-		if (Filename && wcsstr(fname, GameStart) && DoesFileExist(fname)) {
+		if (Filename && wcsstr(fname, GameStart) && DoesFileExist(fname)) 
+		{
 
 
 			return 0; // The file exists outside the PAK and, return false here so the game believes that it doesn't exists in the PAK.
