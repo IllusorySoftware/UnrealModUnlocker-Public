@@ -210,6 +210,11 @@ SigScanner_LooseFileLoader::SigScanner_LooseFileLoader()
 	p_IsNonPakFileNameAllowedSigScanProfile_11.p_mask = "xxxx?xxxxxxxxxxxxxxxxxx?xxxx????xxx????xxxxxxxxxxx";
 	p_IsNonPakFileNameAllowedSigScanProfileVector.push_back(p_IsNonPakFileNameAllowedSigScanProfile_11);
 
+	//variables 4.26 TWD
+	p_IsNonPakFileNameAllowedSigScanProfile_12.p_pattern = (const unsigned char*)"\x48\x89\x5C\x24\x00\x48\x89\x6C\x24\x00\x56\x57\x41\x56\x48\x83\xEC\x40\x48\x8B\xF9\x45\x33\xC0\x48\x8D\x4C\x24\x00\x48\x8B\xF2\xE8\x00\x00\x00\x00\x33\xDB\x48\x8D\x2D\x00\x00\x00\x00\x39\x58\x08\x74\x14\x4C\x8B\x00\x8B\xD3\x4C\x89\x44\x24\x00\x49\x8B\xC8\x4D\x85\xC0\x74\x2D\xEB\x0B";
+	p_IsNonPakFileNameAllowedSigScanProfile_12.p_mask = "xxxx?xxxx?xxxxxxxxxxxxxxxxxx?xxxx????xxxxx????xxxxxxxxxxxxxx?xxxxxxxxxx";
+	p_IsNonPakFileNameAllowedSigScanProfileVector.push_back(p_IsNonPakFileNameAllowedSigScanProfile_12);
+
 }
 
 void SigScanner_LooseFileLoader::init()
