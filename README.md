@@ -1,9 +1,16 @@
 # UnrealModUnlocker-Public 1.0.4
 
 ## Notes:
-- **I'm not the best programmer in the world. (Keep that in mind).**
+- **I'm not the best programmer in the world (Keep that in mind).**
+- **EXE Loader loads an Executable ModMenu/PluginLoader primarily for control over mods.**
 
 
+### FaQ's:
+#### Can this be used Maliciously?
+- **Yes, it 100% can be. However you have to specific the executable you want to load in the 'isz_plg.config' file.**
+
+#### Why do I need/want this?
+- **You don't "need" it. However if you want to automatically open an executable when UMU loads. You might want to check this out.**
 
 
 ## General Information:  
