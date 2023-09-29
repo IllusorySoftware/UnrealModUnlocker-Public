@@ -1,5 +1,10 @@
 # UnrealModUnlocker-Public 1.0.4
 
+## Notes:
+- **I'm not the best programmer in the world. (Keep that in mind).**
+
+
+
 
 ## General Information:  
 UnrealModUnlocker Public and UnrealModUnlocker Basic are NOT from the same codebase.  
