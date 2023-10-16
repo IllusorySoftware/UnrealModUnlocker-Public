@@ -1,6 +1,5 @@
 # UnrealModUnlocker-Public 1.0.4
 
-
 ## General Information:  
 UnrealModUnlocker Public and UnrealModUnlocker Basic are NOT from the same codebase.  
 UnrealModUnlocker Public ONLY contains code for the loose file loading part of the UMU Project.  
